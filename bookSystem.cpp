@@ -161,7 +161,27 @@ void showall(){
     }
 
 }
+void sortName(){
 
+
+    system("cls");
+    heading();
+    if(i==0){
+        cout<<ch<<ch<<"\n\n NO BOOK AVAILABLE "<<ch<<ch;
+    }
+
+    else{
+         for (int pass = 0; pass < i - 1; pass++) {
+            for (int j = 0; j < i - pass - 1; j++) {
+                if (B[j].name > B[j + 1].name) {
+                    swap(B[j], B[j + 1]);
+                }
+            }
+        }
+        cout << "\n\n\n " << ch << ch << " BOOKS SORTED BY NAME SUCCESSFULLY " << ch << ch;
+    }
+
+}
 
 int main()
 {
@@ -177,7 +197,9 @@ int main()
         cout<<"\n\n"<<ch<<ch<<" 3.UPDATE BOOK ";
         cout<<"\n\n"<<ch<<ch<<" 4.DELETE BOOK ";
         cout<<"\n\n"<<ch<<ch<<" 5.SHOW ALL BOOK ";
-        cout<<"\n\n"<<ch<<ch<<" 6.EXIT \n\n ";
+        cout<<"\n\n"<<ch<<ch<<" 6.SORT BY NAME BOOK ";
+
+        cout<<"\n\n"<<ch<<ch<<" 7.EXIT \n\n ";
 
         cout<<ch<<ch<<" ENTER YOUR CHOICE -> ";
         cin>>choice;
@@ -204,7 +226,13 @@ int main()
 
                 break;
             case 6:
-                exit(0);
+                 sortName();
+                 showall();
+                 
+                 break;
+
+            case 7:
+                  exit(0);
 
             default:
                 cout<<"\n\n "<<ch<<ch<<" PLEASE SELECT CORRECT OPTION "<<ch<<ch;
